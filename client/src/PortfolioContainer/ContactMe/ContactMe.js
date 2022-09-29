@@ -8,7 +8,6 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeader";
 import ScrollService from "../../utilities/ScrollService";
 import Animation from "../../utilities/animation";
 import "./ContactMe.css";
-import "../../App.css";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
@@ -36,13 +35,6 @@ export default function ContactMe(props) {
   // const submitForm = async (e) => {
   //   e.preventDefault();
   //   try {
-  //     emailjs
-  //     .sendForm(
-  //       "service_14oo9tm",
-  //       "template_320068i",
-  //       e.target,
-  //       "JTkCntffzY-VvTg66"
-  //     )
   //     let data = {
   //       name,
   //       email,
@@ -67,8 +59,9 @@ export default function ContactMe(props) {
   //     console.log(error);
   //   }
   // };
-  const sendForm = (e) => {
+  const sendForm = async (e) => {
     e.preventDefault();
+    if (name.length === 0 || email.length === 0 || message.length === 0) return;
     emailjs
       .sendForm(
         "service_14oo9tm",
@@ -77,53 +70,72 @@ export default function ContactMe(props) {
         "JTkCntffzY-VvTg66"
       )
       .then((res) => {
-        alert("thanks for contact");
+        alert(
+          "連絡していただき、誠にありがとうございます。できるだけ早目にお返事しますので。少々お待ちください！"
+        );
+        setName("");
+        setEmail("");
+        setMessage("");
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className="main-container fade-in" id={props.id || ""}>
-      <ScreenHeading subHeading={"Lets keep in Touch"} title={"Contact Me"} />
+      <ScreenHeading
+        subHeading={"交流を続けてください！"}
+        title={"コンタクト"}
+      />
       <div className="central-form">
         <div className="col">
-          <h2 className="title">Get In Touch 📧</h2>
-          <a href="#">
+          <h2 className="title">お問い合わせ 📧</h2>
+          <a href="https://www.facebook.com/phusssss/" target="_blank">
             <i className="fa fa-facebook-square"></i>
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/phufu_/" target="_blank">
             <i className="fa fa-instagram"></i>
           </a>
         </div>
         <div className="back-form">
           <div className="img-back">
-            <h4>Send Your Email Here!</h4>
+            <h4>ここにメールを送ってください！</h4>
             <img src={imgBack} alt="image not found" />
           </div>
           <form onSubmit={sendForm}>
             <p>{banner}</p>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" onChange={handleName} value={name} />
+            <div className="text-field">
+              <label htmlFor="name">名前：</label>
+              <input
+                type="text"
+                name="name"
+                onChange={handleName}
+                value={name}
+              />
+            </div>
 
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="user-email"
-              onChange={handleEmail}
-              value={email}
-            />
+            <div className="text-field">
+              <label htmlFor="email">メール：</label>
+              <input
+                type="email"
+                name="user-email"
+                onChange={handleEmail}
+                value={email}
+              />
+            </div>
 
-            <label htmlFor="message">Message</label>
-            <textarea
-              type="text"
-              name="message"
-              onChange={handleMessage}
-              value={message}
-            />
+            <div className="text-field mes">
+              <label htmlFor="message">メッセージ：</label>
+              <textarea
+                type="text"
+                name="message"
+                onChange={handleMessage}
+                value={message}
+              />
+            </div>
 
             <div className="send-btn">
               <button type="submit">
-                Send
+                送信
                 <i className="fa fa-paper-plane"></i>
                 {bool ? (
                   <span className="load">

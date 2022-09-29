@@ -3,5 +3,19 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 670px;
-  background-image: url("../../assets/Home/bg.jpg");
+  /* background-image: url("../../assets/Home/bg.jpg"); */
+  /* background: rgb(33, 26, 96);
+  background: linear-gradient(
+    90deg,
+    rgb(2, 8, 89) 25%,
+    rgba(21, 107, 191, 1) 85%
+  ); */
+  background-color: #1f2235;
+  background: linear-gradient(90deg, #1f2235 25%, #3d4265 85%);
+  border-radius: 0% 0% 50% 50% / 0% 0% 14% 14%;
+}
+@media screen and (max-width: 648px) {
+  .home-container {
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+  }
 }

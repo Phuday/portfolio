@@ -62,18 +62,20 @@ form label {
 form input,
 textarea {
   width: 100%;
-  border: 2px solid rgba(0, 0, 0, 0);
+  /* border: 2px solid rgba(0, 0, 0, 0); */
   outline: none;
-  background-color: rgba(230, 230, 230, 0.6);
+  /* background-color: rgba(230, 230, 230, 0.6); */
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
   margin-bottom: 22px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border: 1px solid #1f2235;
+  border-radius: 4px;
   transition: 0.3s;
 }
 
 textarea:focus {
-  border: 2px solid rgba(30, 85, 250, 0.47);
+  /* border: 2px solid rgba(30, 85, 250, 0.47); */
   background-color: #fff;
 }
 input:focus {
@@ -122,6 +124,34 @@ button .load img {
 .col i:hover {
   transform: scale(1.5);
   transition: all 0.25s ease;
+}
+.text-field {
+  position: relative;
+}
+
+.text-field label {
+  display: inline-block;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  background-color: #fff;
+  padding: 1px 5px;
+  font-size: 12px;
+  transform: translateY(-50%);
+  color: #ff5823;
+}
+
+.text-field input {
+  padding: 15px;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #1f2235;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
 }
 @media screen and (min-width: 940px) {
   .back-form {

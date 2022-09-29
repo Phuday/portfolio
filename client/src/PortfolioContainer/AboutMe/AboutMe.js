@@ -15,15 +15,17 @@ export default function AboutMe(props) {
 
   const SCREEN_CONSTSANTS = {
     description:
-      "Full stack web and mobile developer with background knowledge of MERN stacks with redux, along with a knack of building applications with utmost efficiency. Strong professional with a BSC willing to be an asset for an organization.",
+      "私の名前はヴォン　ディン　フーと申します。ベトナムから参り、2019年から日本に来ています。中央工学校OSAKAのブリッジシステムエンジニア科２年生です。現在、学校でウェブ開発を勉強していて、将来、ウェブ開発者になりたいです。",
     highLights: {
       bullets: [
-        "Full Stack web and mobile development",
-        "React and React Native",
-        "Interactive Front End as per the design",
-        "Interactive Front End as per the design",
+        "HTML/CSS",
+        "Javascript, React JS",
+        "Photoshop, Figma",
+        "設計どおりのインタラクティブなフロント エンド",
+        "PHP (基本)",
+        "C# (基本)",
       ],
-      heading: "Here are a Few Highlights:",
+      heading: "私のスキル：",
     },
   };
   const renderHighLight = () => {
@@ -40,7 +42,7 @@ export default function AboutMe(props) {
       id={props.id || ""}
     >
       <div className="about-me-parent">
-        <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
+        <ScreenHeading title={"私について"} subHeading={"私に関するの情報"} />
         <div className="about-me-card">
           <div className="about-me-profile"></div>
           <div className="about-me-details">
@@ -54,15 +56,10 @@ export default function AboutMe(props) {
               {renderHighLight()}
             </div>
             <div className="about-me-options">
-              <button
-                className="btn primary-btn"
-                onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
-              >
-                {""}
-                Contact Me
-              </button>
               <a href="ehizcv.pdf" download="Ehiedu ehizcv.pdf">
-                <button className="btn highlighted-btn">Download CV</button>
+                <button className="btn highlighted-btn">
+                  履歴書をダウンロードする
+                </button>
               </a>
             </div>
           </div>

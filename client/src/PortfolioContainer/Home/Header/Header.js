@@ -13,6 +13,15 @@ export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
 
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+  window.addEventListener("scroll", changeColor);
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
     let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
@@ -57,7 +66,9 @@ export default function Header() {
 
   return (
     <div
-      className="header-container"
+      className={
+        color ? "header-container header-container-bg" : "header-container"
+      }
       onClick={() => setShowHeaderOptions(!showHeaderOptions)}
     >
       <div className="header-parent">

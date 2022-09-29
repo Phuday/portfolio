@@ -10,10 +10,10 @@ export default function Profile() {
         <div className="profile-details">
           <div className="colz">
             <div className="colz-icon">
-              <a href="#">
+              <a href="https://www.facebook.com/phusssss/" target="_blank">
                 <i className="fa fa-facebook-square"></i>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/phufu_/" target="_blank">
                 <i className="fa fa-instagram"></i>
               </a>
             </div>
@@ -21,28 +21,25 @@ export default function Profile() {
           <div className="profile-details-name">
             <span className="primary-text">
               {""}
-              Hello, I'm <span className="highlighted-text">Phu</span>
+              こんにちは、 <span className="highlighted-text">フー</span>
+              {""}
+              と申します。
             </span>
           </div>
           <div className="profile-details-role">
             <span className="primary-text">
               {""}
-              <h1>Frontend Dev</h1>
+              <h1>フロントエンド開発</h1>
             </span>
             <span className="profile-role-tagline">
-              Knack of building applications with front and back end operations.
+              フロントエンド操作によるウェブサイト構築のコツ
             </span>
           </div>
           <div className="profile-options">
-            <button
-              className="btn primary-btn"
-              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
-            >
-              {""}
-              Contact Me
-            </button>
             <a href="ehizcv.pdf" download="Ehiedu ehizcv.pdf">
-              <button className="btn highlighted-btn">Download CV</button>
+              <button className="btn highlighted-btn">
+                履歴書をダウンロードする
+              </button>
             </a>
           </div>
         </div>
